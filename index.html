@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Temporada Pro — Precificação Dinâmica de Temporada</title>
+<meta name="description" content="Motor de precificação dinâmica para locação de temporada no litoral: tarifa ideal por data, evento e ocupação.">
+<style>body{font-family:system-ui;margin:0;background:#f0f9ff;color:#0c4a6e}header{background:linear-gradient(135deg,#0369a1,#0ea5e9);color:#fff;padding:2rem 1rem;text-align:center}header a{color:#bae6fd}main{max-width:760px;margin:1.5rem auto;padding:0 1rem}.card{background:#fff;border-radius:12px;padding:1.2rem;margin:1rem 0;box-shadow:0 2px 8px rgba(2,132,199,.15)}input,select{font-size:1rem;padding:.55rem;border-radius:8px;border:1px solid #7dd3fc;width:100%;box-sizing:border-box;margin:.25rem 0}button{background:#0284c7;color:#fff;border:0;border-radius:8px;padding:.6rem;font-weight:700;cursor:pointer;width:100%}table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{padding:.4rem;border-bottom:1px solid #e0f2fe}footer{text-align:center;font-size:.85rem;padding:2rem 1rem;color:#0369a1}.net{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:.8rem}.net a{background:#e0f2fe;color:#075985;padding:.3rem .6rem;border-radius:999px;text-decoration:none;font-size:.8rem}</style>
+</head>
+<body>
+<header><h1>💹 Temporada Pro</h1><p>Precificação dinâmica estilo companhia aérea para o seu imóvel de temporada.</p><a href="https://praia.digital">← praia.digital</a> · <a href="https://praia.digital/apps">Hub de apps</a></header>
+<main>
+<div class="card">
+<label>Diária base (R$)</label><input id="base" type="number" value="450">
+<label>Cidade</label><select id="cidade"><option value="1.0">Guarujá</option><option value="1.05">Santos</option><option value="1.25">Maresias / Juquehy</option><option value="0.9">Praia Grande</option><option value="0.8">Mongaguá / Peruíbe</option></select>
+<label>Quartos</label><select id="qto"><option value="0.85">1</option><option value="1" selected>2</option><option value="1.2">3</option><option value="1.45">4+</option></select>
+<button onclick="calc()">Gerar calendário de preços</button>
+</div>
+<div class="card" id="out" style="display:none"><h3>Tarifa sugerida por período</h3><table id="tb"></table><p id="rev"></p></div>
+<div class="card"><h3>Combine com</h3><p>🌊 <a href="https://praia.digital/ondata">Ondata — demanda prevista por praia</a><br>🤖 <a href="https://praia.digital/concierge-ia">Concierge IA para seus hóspedes</a><br>✅ <a href="https://praia.digital/checklist-anfitriao">Checklist do Anfitrião</a></p></div>
+</main>
+<footer><b>Rede Praia Digital</b><div class="net"><a href="https://praia.digital/apps">Hub</a><a href="https://praia.digital/praiascore">PraiaScore</a><a href="https://praia.digital/vizinho-digital">Vizinho Digital</a><a href="https://praia.digital/match-praia">Match Praia</a><a href="https://praia.digital/marea">Maréa</a><a href="https://praia.digital/tour-360">Tour 360</a><a href="https://praia.digital/mapa-investidor">Mapa Investidor</a><a href="https://praia.digital/radar-precos">Radar de Preços</a></div><p>© 2026 Praia Digital</p></footer>
+<script>
+const per=[['Reveillon (28/12–03/01)',2.6],['Carnaval',2.2],['Janeiro (alta temporada)',1.8],['Feriados prolongados',1.6],['Feriado 7 de setembro',1.5],['Julho (férias)',1.3],['Fins de semana comuns',1.2],['Semanas de baixa (mai–ago)',0.85],['Novembro (pré-temporada)',1.05]];
+function calc(){
+ const b=+document.getElementById('base').value,c=+document.getElementById('cidade').value,q=+document.getElementById('qto').value;
+ let h='<tr><th>Período</th><th>Multiplicador</th><th>Diária sugerida</th></tr>',t=0;
+ per.forEach(p=>{const v=Math.round(b*c*q*p[1]);t+=v;h+='<tr><td>'+p[0]+'</td><td>'+p[1]+'×</td><td><b>R$ '+v.toLocaleString('pt-BR')+'</b></td></tr>';});
+ document.getElementById('tb').innerHTML=h;
+ document.getElementById('out').style.display='block';
+ document.getElementById('rev').innerHTML='💰 Média ponderada: <b>R$ '+Math.round(t/per.length).toLocaleString('pt-BR')+'</b>/diária. Com 120 diárias/ano ≈ <b>R$ '+Math.round(t/per.length*120).toLocaleString('pt-BR')+'</b> de receita bruta.';
+}
+</script>
+</body>
+</html>
