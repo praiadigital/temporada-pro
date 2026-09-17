@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Temporada Pro | Praia Digital</title>
-<meta name="description" content="Defina metas de ocupação e receita anual para seu imóvel de temporada e acompanhe se está no caminho. Satélite de praia.digital.">
+<meta name="description" content="Painel de metas e KPIs da sua operação de locação de temporada: ocupação, ADR, RevPAR e meta anual. Satélite de praia.digital.">
 <style>
 body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.6}
-.hero{background:linear-gradient(135deg,#083344,#0891b2);color:#fff;padding:50px 20px;text-align:center}
+.hero{background:linear-gradient(135deg,#3b0764,#a855f7);color:#fff;padding:50px 20px;text-align:center}
 .container{max-width:1000px;margin:0 auto;padding:30px 20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
@@ -22,7 +22,7 @@ footer{text-align:center;padding:24px;color:#64748b;font-size:.9em}
 <nav style="background:#0c4a6e;padding:12px 20px;display:flex;gap:14px;flex-wrap:wrap;font-family:system-ui,sans-serif">
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praia.digital/">🌊 Praia Digital</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/apps/">Hub</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/hermes-agents/">Hermes</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/hermes-agents/">Hermes Agents</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/area-anfitriao/">Anfitrião</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/simulador-roi/">ROI</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/simulador-credito/">Crédito</a>
@@ -30,7 +30,7 @@ footer{text-align:center;padding:24px;color:#64748b;font-size:.9em}
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/calculadoras/">Calculadoras</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/radar-precos/">Radar</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/mapa-investidor/">Mapa</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/concierge-ia/">Concierge</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/concierge-ia/">Concierge IA</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/checklist-anfitriao/">Checklist</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/termometro-mercado/">Termômetro</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/alerta-ofertas/">Ofertas</a>
@@ -38,33 +38,38 @@ footer{text-align:center;padding:24px;color:#64748b;font-size:.9em}
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/quiz-praia-ideal/">Quiz</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/precificador-temporada/">Precificador</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/tour-360/">Tour 360</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/fluxo-caixa/">Caixa</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/fluxo-caixa/">Fluxo</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/decor-praia/">Decor</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/open-house/">Open House</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/score-bairro/">Score Bairro</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/match-praia/">Match Praia</a>
-<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/temporada-pro/">Temporada Pro</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/score-bairro/">Bairro Score</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/match-praia/">Match</a>
 <a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/marea/">Maréa</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/temporada-pro/">Temporada Pro</a>
 </nav>
-<div class="hero"><h1>🎯 Temporada Pro</h1><p>Meta de receita anual → descubra a diária e ocupação necessárias. Simples assim.</p></div>
+<div class="hero"><h1>📈 Temporada Pro</h1><p>Os KPIs profissionais da sua operação de temporada em um painel instantâneo.</p>
+<a class="cta" href="https://praiadigital.github.io/fluxo-caixa/">💵 Projetar fluxo de caixa</a></div>
 <div class="container"><div class="grid">
-<div class="card"><h3>1️⃣ Sua meta</h3>
-<label>Meta de receita líquida no ano (R$)</label><input id="meta" type="number" value="60000">
-<label>Diária média que você cobra (R$)</label><input id="diaria" type="number" value="450">
-<label>Custos operacionais (%)</label><input id="custos" type="number" value="25">
-<button onclick="calc()">🎯 Calcular plano</button></div>
-<div class="card"><h3>2️⃣ Seu plano</h3><div id="saida"></div></div>
+<div class="card"><h3>1️⃣ Seus números do mês</h3>
+<label>Diárias vendidas no mês</label><input id="dias" type="number" value="12">
+<label>Receita bruta do mês (R$)</label><input id="receita" type="number" value="5400">
+<label>Custos do mês (R$)</label><input id="custos" type="number" value="2100">
+<button onclick="calc()">📊 Calcular KPIs</button></div>
+<div class="card"><h3>2️⃣ Seus KPIs</h3><div id="saida"></div></div>
 </div>
-<div class="card"><h3>📅 Distribuição sugerida</h3><p>Concentre 60% da meta nos meses 🔥 do <a href="https://praiadigital.github.io/termometro-mercado/">Termômetro de Mercado</a> e acompanhe o caixa no <a href="https://praiadigital.github.io/fluxo-caixa/">Fluxo de Caixa</a>. Precifique mês a mês no <a href="https://praiadigital.github.io/precificador-temporada/">Precificador</a>.</p></div>
+<div class="card"><h3>🎯 Benchmarks da rede</h3><div class="grid">
+<div class="card" style="text-align:center"><h4>Ocupação</h4><p style="font-size:1.5em;font-weight:800;color:#7c3aed">≥ 45%</p></div>
+<div class="card" style="text-align:center"><h4>Margem líquida</h4><p style="font-size:1.5em;font-weight:800;color:#7c3aed">≥ 60%</p></div>
+<div class="card" style="text-align:center"><h4>Nota média</h4><p style="font-size:1.5em;font-weight:800;color:#7c3aed">≥ 4.8 ⭐</p></div>
+</div></div>
+<div class="card"><h3>🚀 Suba de nível</h3><p>Aumente a diária com o <a href="https://praiadigital.github.io/precificador-temporada/">Precificador</a>, decore com o <a href="https://praiadigital.github.io/decor-praia/">Decor Praia</a> e automatize com os <a href="https://praiadigital.github.io/hermes-agents/">Hermes Agents</a>.</p></div>
 </div>
 <script>
 const fmt=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 function calc(){
-const m=+document.getElementById('meta').value||0,d=+document.getElementById('diaria').value||1,c=+document.getElementById('custos').value||0;
-const liq=d*(1-c/100);
-const noites=m/liq, ocup=noites/365*100;
-const viavel=ocup<=70;
-document.getElementById('saida').innerHTML=`<p>Diária líquida: <strong>${fmt(liq)}</strong></p><p style="font-size:1.5em;font-weight:800;color:#0891b2">🌙 ${Math.ceil(noites)} noites/ano necessárias</p><p>Ocupação média: <strong>${ocup.toFixed(0)}%</strong></p><p style="font-weight:700;color:${viavel?'#16a34a':'#dc2626'}">${viavel?'✅ Meta realista (ocupação ≤ 70%)':'⚠️ Meta agressiva — suba a diária ou reduza custos'}</p>`;}
+const d=+document.getElementById('dias').value||0,r=+document.getElementById('receita').value||0,c=+document.getElementById('custos').value||0;
+const adr=d>0?r/d:0, ocup=d/30*100, revpar=adr*d/30, margem=r>0?(r-c)/r*100:0;
+const liq=r-c;
+document.getElementById('saida').innerHTML=`\n<p>🏷️ ADR (diária média): <strong>${fmt(adr)}</strong></p>\n<p>📆 Ocupação: <strong style="color:${ocup>=45?'#16a34a':'#d97706'}">${ocup.toFixed(0)}%</strong></p>\n<p>📊 RevPAR: <strong>${fmt(revpar)}/dia</strong></p>\n<p>💰 Margem líquida: <strong style="color:${margem>=60?'#16a34a':'#d97706'}">${margem.toFixed(0)}%</strong> (${fmt(liq)})</p>`;}
 calc();
 </script>
 <footer>© Praia Digital — 2026 — Satélite da rede <a href="https://praia.digital">praia.digital</a> · <a href="https://praiadigital.github.io/apps/">Ver todos os apps</a></footer>
